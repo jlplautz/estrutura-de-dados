@@ -7,7 +7,7 @@ class PilhaVaziaExcecao(Exception):
 
 
 class Pilha:
-
+    # inserido atributo nome para identificar a pilha
     def __init__(self):
         self._deque = deque()
 
@@ -23,6 +23,7 @@ class Pilha:
 
     def empilhar(self, obj):
         self._deque.append(obj)
+        pass
 
     def desempilhar(self):
         try:

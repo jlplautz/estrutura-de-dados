@@ -70,3 +70,4 @@ Link do repositório antigo, de 2016, quando o curso foi ministrado na Fatec:
   - a notação Big_oh é aquela que voce tem um valor de n e uma constante tal qual esta função
     é c de g(n) sempre será maior que f(n) para um determinado valor.
   - se temos um função 8n + 5 -> função constante e função linear. entao a pior 
+********

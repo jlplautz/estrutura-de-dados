@@ -2,7 +2,7 @@
 from collections import deque
 
 
-class PilhaVaziaExcecao(Exception):
+class PilhaVaziaErro(Exception):
     pass
 
 
@@ -19,13 +19,14 @@ class Pilha:
         try:
             return self._deque[-1]
         except IndexError as e:
-            raise PilhaVaziaExcecao('Pilha Vazia') from e
+            raise PilhaVaziaErro('Pilha Vazia') from e
 
     def empilhar(self, obj):
         self._deque.append(obj)
+        pass
 
     def desempilhar(self):
         try:
             return self._deque.pop()
         except IndexError as e:
-            raise PilhaVaziaExcecao('Pilha vazia') from e
+            raise PilhaVaziaErro('Pilha vazia') from e

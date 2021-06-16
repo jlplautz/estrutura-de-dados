@@ -2,7 +2,7 @@
 from collections import deque
 
 
-class PilhaVaziaExcecao(Exception):
+class PilhaVaziaErro(Exception):
     pass
 
 
@@ -10,6 +10,9 @@ class Pilha:
 
     def __init__(self):
         self._deque = deque()
+
+    def __len__(self):
+        return len(self._deque)
 
     @property
     def esta_vazia(self):
@@ -19,13 +22,14 @@ class Pilha:
         try:
             return self._deque[-1]
         except IndexError as e:
-            raise PilhaVaziaExcecao('Pilha Vazia') from e
+            raise PilhaVaziaErro('Pilha Vazia') from e
 
     def empilhar(self, obj):
         self._deque.append(obj)
+        pass
 
     def desempilhar(self):
         try:
             return self._deque.pop()
         except IndexError as e:
-            raise PilhaVaziaExcecao('Pilha vazia') from e
+            raise PilhaVaziaErro('Pilha vazia') from e
